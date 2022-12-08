@@ -7,7 +7,7 @@ class User_M extends CI_Model{
     }
 
     public function create($data=null){
-        $this->db->insert('user', $data);
+        return $this->db->insert('user', $data);
     }
 
     public function edit($where, $table){

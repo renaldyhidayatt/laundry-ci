@@ -62,7 +62,7 @@ CREATE TABLE `laundry` (
         ON DELETE CASCADE
 );
 
+SELECT laundry.laundry_id, pelanggan.nama_pelanggan as nama_pelanggan , laundry.status, laundry.berat,laundry.jumlah_total,laundry.status_pembayaran,categories.nama as nama_categories, laundry.keterangan FROM laundry JOIN pelanggan ON pelanggan.pelanggan_id = laundry.pelanggan_id JOIN categories ON categories.category_id = laundry.category_id WHERE laundry.laundry_id = 1;
 
 
-
-
+SELECT posts.id AS post_id, posts.title, comments.id AS comment_id, comments.id_post_comment, comments.user_name_comment,comments.comment FROM comments JOIN posts ON posts.id = comments.id_post_comment WHERE posts.id = 2;

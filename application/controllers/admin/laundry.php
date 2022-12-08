@@ -106,7 +106,7 @@ class Laundry extends CI_Controller
                     $this->session->set_flashdata('success_laundry', 'Proses membuat laundry Berhasil');
                     redirect("admin/laundry");
                 } else {
-                    $this->session->set_flashdata('error_laundry', 'Error pembuatan kategori');
+                    $this->session->set_flashdata('error_laundry', 'Error pembuatan laundry');
                     redirect("admin/laundry", 'refresh');
                 }
             } else {
@@ -226,5 +226,15 @@ class Laundry extends CI_Controller
             $this->session->set_flashdata('error_laundry', 'Error delete laundry');
             redirect("admin/laundry", 'refresh');
         }
+    }
+
+    function generatepdf($id){
+        $where = array(
+            'laundry_id' => $id
+        );
+
+        $data['laundry'] = $this->laundry_m->relationJoin($where)->result();
+
+        $this->load->view('admin/laundry/generatepdf',$data);
     }
 }

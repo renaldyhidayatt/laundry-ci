@@ -83,7 +83,7 @@ class User extends CI_Controller
 
 
     // Nampilin Edit pada view
-    public function edit($id)
+    public function edit($id=null)
     {
         $this->auth_m->isAdmin() == true || redirect("admin/user");
 

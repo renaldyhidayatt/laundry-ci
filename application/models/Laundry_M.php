@@ -43,4 +43,13 @@ class Laundry_m extends CI_Model{
         $this->db->where('laundry_id', $laundry_id);
         return $this->db->delete('laundry');
     }
+
+    public function relationJoin($laundry_id){
+        $this->db->select('*');
+        $this->db->from('laundry');
+        $this->db->join('pelanggan', 'pelanggan.pelanggan_id = laundry.pelanggan_id');
+        $this->db->join('categories', 'categories.category_id = laundry.category_id');
+        $this->db->where($laundry_id);
+        return $this->db->get();
+    }
 }

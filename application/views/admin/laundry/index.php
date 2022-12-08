@@ -58,6 +58,7 @@
                                             <td><?php echo $row->category_id ?></td>
                                             <td><?php echo $row->keterangan ?></td>
                                             <td width="250">
+                                                <a href="<?php echo site_url('admin/laundry/generatepdf/').$row->laundry_id; ?>" class="btn btn-primary">generatepdf</a>
                                                 <a href="<?php echo site_url('admin/laundry/edit/').$row->laundry_id; ?>" class="btn btn-success">Edit</a>
                                                 <a onclick="return confirm('Are you sure you want to delete this record?');" href="<?php echo site_url('admin/laundry/delete/' . $row->laundry_id); ?>" class="btn btn-danger">Delete</a>
                                             </td>

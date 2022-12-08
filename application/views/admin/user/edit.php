@@ -11,7 +11,7 @@
                     <?= form_error("email"); ?>
                     <?= form_error("password"); ?>
                     <?php foreach($user as $row){ ?>
-                    <form action="<?= base_url(); ?>admin/user/update" method="POST">
+                    <form action="<?= base_url(); ?>admin/user/edit" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row->user_id ?>">
                         <div class="mb-3">
                             <label for="firstname" class="form-label">Firstname</label>
