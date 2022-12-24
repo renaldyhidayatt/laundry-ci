@@ -12,7 +12,7 @@
                     <?= form_error("alamat"); ?>
                     <?= form_error("no_hp"); ?>
                     <?php foreach ($karyawan as $row) { ?>
-                        <form action="<?= base_url(); ?>admin/karyawan/update" method="POST">
+                        <form action="<?= base_url(); ?>admin/karyawan/edit" method="POST">
                             <input type="hidden" value="<?php echo $row->karyawan_id ?>" name="id" />
                             <div class="mb-3">
                                 <label for="nama_karyawan" class="form-label">Nama Karyawan</label>

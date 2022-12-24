@@ -16,6 +16,7 @@ class Auth_M extends CI_Model{
                 if(password_verify($password, $data_user->password)){
                     $data = [
                         'user_id' => $data_user->id,
+                        'email' => $data_user->email,  
                         'firstname' => $data_user->firstname,
                         'lastname' => $data_user->lastname,
                         'loggedin' => TRUE,

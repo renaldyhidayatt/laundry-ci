@@ -36,10 +36,14 @@ class Karyawan_m extends CI_Model{
             'created_by' => $created_by
         ];
         $this->db->update('karyawan', $data);
+
+        return true;
     }
 
     public function deleteKaryawan($karyawan_id){
         $this->db->where('karyawan_id', $karyawan_id);
         $this->db->delete('karyawan');
+
+        return true;
     }
 }

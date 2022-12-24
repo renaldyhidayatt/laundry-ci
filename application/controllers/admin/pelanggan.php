@@ -13,7 +13,7 @@ class Pelanggan extends CI_Controller
         $this->auth_m->isLoggedIn() == true || redirect("auth/login"); // True = True langsung redirect ke auth login
     }
 
-    //
+    // untuk menampilkan view
     public function index()
     {
         $data['pelanggan']  = $this->pelanggan_m->findAll(); /// array berupa row  
@@ -70,8 +70,7 @@ class Pelanggan extends CI_Controller
             $jenis_kelamin = $this->input->post('jeniskelamin');
             $alamat = $this->input->post('alamat');
             $no_hp = $this->input->post('no_hp');
-            $created_by = $this->session->userdata('firstname'). ' '.$this->session->userdata('lastname');
-
+            $created_by = $this->session->userdata('firstname') . ' ' . $this->session->userdata('lastname');
 
             if ($this->pelanggan_m->create($namapelanggan, $jenis_kelamin, $alamat, $no_hp, $created_by) == true) {
                 $this->session->set_flashdata('success_pelanggan', 'Proses membuat pelanggan Berhasil');
@@ -84,7 +83,7 @@ class Pelanggan extends CI_Controller
     }
 
 
-    public function edit($id)
+    public function edit($id=null)
     {
         $this->auth_m->isAdmin() == true || redirect("admin/pelanggan");
 
@@ -100,7 +99,7 @@ class Pelanggan extends CI_Controller
         $this->form_validation->set_rules(
             'jeniskelamin',
             'Jenis Kelamin',
-            'required|min_length[6]',
+            'required|min_length[3]',
             [
                 'required' => "<div class='alert alert-danger' role='alert'>Jenis Kelamin Harus di Isi</div>",
                 'min_length' => "<div class='alert alert-danger' role='alert'>Jenis Kelamin Terlalu Pendek</div>"
@@ -133,14 +132,14 @@ class Pelanggan extends CI_Controller
             $data['subview'] = 'admin/pelanggan/edit';
             $this->load->view('admin/_layout', $data);
         } else {
-            $id = $this->input->post('pelanggan_id');
+            $pelanggan_id = $this->input->post('pelanggan_id');
             $namapelanggan = $this->input->post('nama_pelanggan');
             $jenis_kelamin = $this->input->post('jeniskelamin');
             $alamat = $this->input->post('alamat');
             $no_hp = $this->input->post('no_hp');
-            $created_by = $this->session->userdata('firstname'). ' '.$this->session->userdata('lastname');
+            $created_by = $this->session->userdata('firstname') . ' ' . $this->session->userdata('lastname');
 
-            if ($this->pelanggan_m->update($id, $namapelanggan, $jenis_kelamin, $alamat, $no_hp, $created_by) == true) {
+            if ($this->pelanggan_m->update($pelanggan_id, $namapelanggan, $jenis_kelamin, $alamat, $no_hp, $created_by) == true) {
                 $this->session->set_flashdata('success_pelanggan', 'Proses update pelanggan Berhasil');
                 redirect("admin/pelanggan");
             } else {

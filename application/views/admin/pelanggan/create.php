@@ -13,7 +13,7 @@
                     <form action="<?= base_url(); ?>admin/pelanggan/create" method="POST">
                         <div class="mb-3">
                             <label for="nama_pelanggan" class="form-label">Nama Pelanggan</label>
-                            <input type="text" id="nama_pelanggan" name="nama_pelanggan" class="form-control" id="nama" aria-describedby="emailHelp">
+                            <input type="text" id="nama_pelanggan" name="nama_pelanggan" class="form-control" id="nama_pelanggan">
                         </div>
                         <div class="mb-3">
                             <label for="jeniskelamin" class="form-label">Jenis Kelamin</label>
@@ -26,11 +26,11 @@
                         <div class="mb-3">
                             <label for="alamat" class="form-label">Alamat</label>
                             
-                            <input type="text" id="alamat" name="alamat" class="form-control" id="nama" aria-describedby="emailHelp">
+                            <input type="text" id="alamat" name="alamat" class="form-control" id="alamat" >
                         </div>
                         <div class="mb-3">
                             <label for="no_hp" class="form-label">No Hp</label>
-                            <input type="number" id="no_hp" name="no_hp" class="form-control" id="nama" aria-describedby="emailHelp">
+                            <input type="number" id="no_hp" name="no_hp" class="form-control" id="nama">
                         </div>
                         <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                     </form>

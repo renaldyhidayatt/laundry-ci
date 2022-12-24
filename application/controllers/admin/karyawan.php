@@ -98,7 +98,7 @@ class Karyawan extends CI_Controller
     }
 
 
-    public function edit($id)
+    public function edit($id=null)
     {
         $this->auth_m->isAdmin() == true || redirect("admin/karyawan");
 
@@ -183,8 +183,6 @@ class Karyawan extends CI_Controller
             }
         }
     }
-
-  
 
     public function delete($id)
     {

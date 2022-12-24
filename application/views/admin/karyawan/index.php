@@ -7,20 +7,20 @@
                 </div>
                 <div class="card-body">
                     <?php
-                    if ($this->session->flashdata('error_laundry') != '') {
+                    if ($this->session->flashdata('error_karyawan') != '') {
                         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
 
-                        echo $this->session->flashdata('error_laundry');
+                        echo $this->session->flashdata('error_karyawan');
                         echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
                         echo '</div>';
                     }
                     ?>
 
                     <?php
-                    if ($this->session->flashdata('success_laundry') != '') {
+                    if ($this->session->flashdata('success_karyawan') != '') {
                         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">';
 
-                        echo $this->session->flashdata('success_laundry');
+                        echo $this->session->flashdata('success_karyawan');
                         echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
                         echo '</div>';
                     }
